@@ -1,4 +1,4 @@
-cola Report for Consensus Partitioning
+cola Report for recount2:TCGA_thyroid
 ==================
 
 **Date**: `r format(as.POSIXlt(Sys.time()), usetz = TRUE)`, **cola version**: `r installed.packages()["cola", "Version"]`
@@ -211,7 +211,7 @@ message(qq("* making density heatmap of global distribution for each sample (@{n
 ```{r density-heatmap}
 library(ComplexHeatmap)
 densityHeatmap(mat, ylab = "value", cluster_columns = TRUE, show_column_names = FALSE,
-    mc.cores = 10)
+    mc.cores = 4)
 ```
 
 ```{r, echo = FALSE, message = FALSE}
@@ -288,20 +288,20 @@ Consensus heatmaps for all methods. ([What is a consensus heatmap?](http://bioco
 
 ```{r, results = "asis", echo = FALSE, include = TRUE}
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - consensus heamtaps for all methods (k = 2), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 2, fun = consensus_heatmap, mc.cores = 10)', 'k = 2', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
+message("  - consensus heamtaps for all methods (k = 2), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 2, fun = consensus_heatmap, mc.cores = 4)', 'k = 2', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - consensus heamtaps for all methods (k = 3), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 3, fun = consensus_heatmap, mc.cores = 10)', 'k = 3', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
+message("  - consensus heamtaps for all methods (k = 3), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 3, fun = consensus_heatmap, mc.cores = 4)', 'k = 3', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - consensus heamtaps for all methods (k = 4), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 4, fun = consensus_heatmap, mc.cores = 10)', 'k = 4', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
+message("  - consensus heamtaps for all methods (k = 4), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 4, fun = consensus_heatmap, mc.cores = 4)', 'k = 4', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - consensus heamtaps for all methods (k = 5), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 5, fun = consensus_heatmap, mc.cores = 10)', 'k = 5', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
+message("  - consensus heamtaps for all methods (k = 5), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 5, fun = consensus_heatmap, mc.cores = 4)', 'k = 5', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - consensus heamtaps for all methods (k = 6), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 6, fun = consensus_heatmap, mc.cores = 10)', 'k = 6', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
+message("  - consensus heamtaps for all methods (k = 6), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 6, fun = consensus_heatmap, mc.cores = 4)', 'k = 6', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-consensus-heatmap')
 knitr_insert_tabs('collect-consensus-heatmap')
 ```
 
@@ -316,20 +316,20 @@ Membership heatmaps for all methods. ([What is a membership heatmap?](http://bio
 
 ```{r, results = "asis", echo = FALSE, include = TRUE}
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - membership heamtap for all methods (k = 2), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 2, fun = membership_heatmap, mc.cores = 10)', 'k = 2', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
+message("  - membership heamtap for all methods (k = 2), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 2, fun = membership_heatmap, mc.cores = 4)', 'k = 2', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - membership heamtap for all methods (k = 3), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 3, fun = membership_heatmap, mc.cores = 10)', 'k = 3', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
+message("  - membership heamtap for all methods (k = 3), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 3, fun = membership_heatmap, mc.cores = 4)', 'k = 3', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - membership heamtap for all methods (k = 4), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 4, fun = membership_heatmap, mc.cores = 10)', 'k = 4', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
+message("  - membership heamtap for all methods (k = 4), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 4, fun = membership_heatmap, mc.cores = 4)', 'k = 4', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - membership heamtap for all methods (k = 5), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 5, fun = membership_heatmap, mc.cores = 10)', 'k = 5', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
+message("  - membership heamtap for all methods (k = 5), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 5, fun = membership_heatmap, mc.cores = 4)', 'k = 5', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - membership heamtap for all methods (k = 6), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 6, fun = membership_heatmap, mc.cores = 10)', 'k = 6', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
+message("  - membership heamtap for all methods (k = 6), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 6, fun = membership_heatmap, mc.cores = 4)', 'k = 6', opt = 'fig.width =18, fig.height = 12, results = "hide"', prefix = 'collect-membership-heatmap')
 knitr_insert_tabs('collect-membership-heatmap')
 ```
 
@@ -348,20 +348,20 @@ Note in following heatmaps, rows are scaled.
 
 ```{r, results = "asis", echo = FALSE, include = TRUE}
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - signature heamtap for all methods (k = 2), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 2, fun = get_signatures, mc.cores = 10)', 'k = 2', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
+message("  - signature heamtap for all methods (k = 2), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 2, fun = get_signatures, mc.cores = 4)', 'k = 2', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - signature heamtap for all methods (k = 3), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 3, fun = get_signatures, mc.cores = 10)', 'k = 3', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
+message("  - signature heamtap for all methods (k = 3), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 3, fun = get_signatures, mc.cores = 4)', 'k = 3', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - signature heamtap for all methods (k = 4), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 4, fun = get_signatures, mc.cores = 10)', 'k = 4', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
+message("  - signature heamtap for all methods (k = 4), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 4, fun = get_signatures, mc.cores = 4)', 'k = 4', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - signature heamtap for all methods (k = 5), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 5, fun = get_signatures, mc.cores = 10)', 'k = 5', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
+message("  - signature heamtap for all methods (k = 5), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 5, fun = get_signatures, mc.cores = 4)', 'k = 5', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
 t2 = Sys.time(); message(paste0(", ", gsub("^ +", "", format(t2 - t1)))); t1 = Sys.time()
-message("  - signature heamtap for all methods (k = 6), 10 cores", appendLF = FALSE)
-knitr_add_tab_item('collect_plots(res_list, k = 6, fun = get_signatures, mc.cores = 10)', 'k = 6', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
+message("  - signature heamtap for all methods (k = 6), 4 cores", appendLF = FALSE)
+knitr_add_tab_item('collect_plots(res_list, k = 6, fun = get_signatures, mc.cores = 4)', 'k = 6', opt = 'fig.width = 18, fig.height = 12, results = "hide"', prefix = 'collect-get-signatures')
 knitr_insert_tabs('collect-get-signatures')
 ```
 
